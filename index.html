@@ -3,32 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prueba inicial de Codex</title>
+    <title>Analizador básico de licitaciones públicas</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="container">
-      <header>
-        <h1>Prueba inicial de Codex</h1>
+      <header class="page-header">
+        <h1>Analizador básico de licitaciones públicas</h1>
+        <p>
+          Completa la información principal de la licitación para generar un
+          resumen estructurado listo para copiar.
+        </p>
       </header>
 
-      <section class="intro" aria-labelledby="intro-title">
-        <h2 id="intro-title">Sobre este repositorio</h2>
-        <p>
-          Este repositorio se está usando para aprender a configurar Codex y
-          practicar un flujo de trabajo básico de creación y revisión de
-          contenido.
-        </p>
-      </section>
+      <form id="tender-form" class="form-grid" novalidate>
+        <div class="field full-width">
+          <label for="expediente">Número de expediente</label>
+          <input type="text" id="expediente" name="expediente" placeholder="Ej: 2026/LCSP/0142" />
+        </div>
 
-      <section class="usos" aria-labelledby="usos-title">
-        <h2 id="usos-title">Posibles usos de Codex</h2>
-        <ol>
-          <li>Crear scripts.</li>
-          <li>Revisar código.</li>
-          <li>Documentar proyectos.</li>
-        </ol>
+        <div class="field full-width">
+          <label for="organo">Órgano de contratación</label>
+          <input type="text" id="organo" name="organo" placeholder="Ej: Ayuntamiento de Madrid" />
+        </div>
+
+        <div class="field full-width">
+          <label for="objeto">Objeto del contrato</label>
+          <textarea id="objeto" name="objeto" rows="3" placeholder="Describe el alcance principal del contrato"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="presupuesto">Presupuesto base de licitación</label>
+          <input type="text" id="presupuesto" name="presupuesto" placeholder="Ej: 250.000 € (IVA excluido)" />
+        </div>
+
+        <div class="field">
+          <label for="fecha-limite">Fecha límite de presentación</label>
+          <input type="date" id="fecha-limite" name="fecha-limite" />
+        </div>
+
+        <div class="field full-width">
+          <label for="criterios">Criterios de adjudicación</label>
+          <textarea id="criterios" name="criterios" rows="3" placeholder="Ej: 60% oferta económica, 40% criterios técnicos"></textarea>
+        </div>
+
+        <div class="field full-width">
+          <label for="requisitos">Requisitos técnicos principales</label>
+          <textarea id="requisitos" name="requisitos" rows="4" placeholder="Detalla certificaciones, solvencia técnica, equipo mínimo, etc."></textarea>
+        </div>
+
+        <div class="field full-width">
+          <label for="riesgos">Riesgos detectados</label>
+          <textarea id="riesgos" name="riesgos" rows="4" placeholder="Identifica riesgos de cumplimiento, plazos, penalizaciones o ambigüedad"></textarea>
+        </div>
+
+        <div class="actions full-width">
+          <button type="button" id="generate-summary">Generar resumen</button>
+        </div>
+      </form>
+
+      <section class="summary" aria-live="polite" aria-labelledby="summary-title">
+        <div class="summary-header">
+          <h2 id="summary-title">Resumen estructurado</h2>
+          <button type="button" id="copy-summary" class="secondary" disabled>
+            Copiar resumen
+          </button>
+        </div>
+        <pre id="summary-output">Aún no se ha generado ningún resumen.</pre>
       </section>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
