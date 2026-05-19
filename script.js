@@ -55,11 +55,18 @@ function esc(s = '') {
 function isAdmin() { return state.view === 'admin' && state.auth; }
 
 function header() {
-  return `<div class="topbar"><div class="brand">TEKNOSERVICE · Portal de Empleo ${isAdmin() ? '· Panel RRHH' : ''}</div><div class="row">${
-    isAdmin()
-      ? `<button class="btn ghost light" data-a="portal">Ver portal</button><button class="btn ghost light" data-a="logout">Cerrar sesión</button>`
-      : `<button class="btn ghost light" data-a="admin">Acceso RRHH</button>`
-  }</div></div>`;
+  return `<div class="topbar">
+    <div class="brand">
+      <img src="assets/logo-teknoservice.png" alt="Teknoservice" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+      <span class="brand-fallback">TEKNOSERVICE</span>
+      <span>· Portal de Empleo ${isAdmin() ? '· Panel RRHH' : ''}</span>
+    </div>
+    <div class="row">${
+      isAdmin()
+        ? `<button class="btn ghost light" data-a="portal">Ver portal</button><button class="btn ghost light" data-a="logout">Cerrar sesión</button>`
+        : `<button class="btn ghost light" data-a="admin">Acceso RRHH</button>`
+    }</div>
+  </div>`;
 }
 
 function foot() {
