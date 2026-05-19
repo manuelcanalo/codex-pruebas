@@ -10,6 +10,9 @@
 body { margin:0; font-family: Inter,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--text); }
 .topbar, .footer { background:var(--blue); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
 .brand { font-weight:800; letter-spacing:.5px; }
+.brand { display:flex; align-items:center; gap:10px; }
+.brand-logo { height:34px; width:auto; object-fit:contain; background:#fff; border-radius:6px; padding:3px; }
+.brand-fallback { font-weight:800; letter-spacing:.5px; }
 .container { max-width:840px; margin:0 auto; padding:20px 16px; }
 .card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:18px; margin-bottom:12px; }
 h1,h2,h3,p { margin:0; }

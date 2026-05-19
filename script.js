@@ -54,8 +54,8 @@ function esc(s = '') {
 
 function isAdmin() { return state.view === 'admin' && state.auth; }
 
-function header() {
-  return `<div class="topbar"><div class="brand">TEKNOSERVICE · Portal de Empleo ${isAdmin() ? '· Panel RRHH' : ''}</div><div class="row">${
+function top() {
+  return `<div class="topbar"><div class="brand"><img src="assets/logo-teknoservice.png" alt="Logo Teknoservice" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';"><span class="brand-fallback" style="display:none">TEKNOSERVICE</span><span>Portal de Empleo ${isAdmin() ? '· Panel RRHH' : ''}</span></div><div class="row">${
     isAdmin()
       ? `<button class="btn ghost light" data-a="portal">Ver portal</button><button class="btn ghost light" data-a="logout">Cerrar sesión</button>`
       : `<button class="btn ghost light" data-a="admin">Acceso RRHH</button>`
@@ -67,7 +67,7 @@ function foot() {
 }
 
 function render() {
-  app.innerHTML = header() + `<main class="container">${body()}</main>` + foot();
+  app.innerHTML = top() + `<main class="container">${body()}</main>` + foot();
   bind();
 }
 
