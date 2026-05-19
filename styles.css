@@ -36,3 +36,22 @@ label { font-size:13px; color:var(--muted); display:block; margin-bottom:4px; }
 .btn.light { color:#fff; border-color:rgba(255,255,255,.5); }
 textarea { resize: vertical; }
 @media (max-width:900px){ .grid3{ grid-template-columns:1fr; } }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-logo {
+  height: 34px;
+  width: auto;
+  display: inline-block;
+  background: white;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.brand-fallback {
+  display: none;
+  font-weight: 700;
+}
