@@ -12,6 +12,7 @@ Mini aplicación web (HTML, CSS y JavaScript puro) para publicar ofertas de empl
 - Persistencia en `localStorage` para ofertas y candidaturas.
 - Carga de logo corporativo en la cabecera.
 
+
 ## Uso
 
 1. Abrir `index.html` en el navegador.
